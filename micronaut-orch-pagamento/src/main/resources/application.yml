@@ -1,0 +1,15 @@
+server:
+  port: 8083
+  application:
+    name: micronautAtomConta
+rabbitmq:
+    addresses:
+      - localhost:5672
+    username: guest
+    password: guest
+app:
+  url:
+    cliente: "http://localhost:8080/v1/clientes"
+    contacorrente: "http://localhost:8081/v1/conta"
+    pagamento: "http://localhost:8082/v1/pagamento"
+
