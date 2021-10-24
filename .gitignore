@@ -4,6 +4,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 /tomcat
+/.mvnw
 
 ### STS ###
 .apt_generated
