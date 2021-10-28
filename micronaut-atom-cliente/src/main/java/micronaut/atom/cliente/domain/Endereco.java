@@ -23,6 +23,8 @@ public class Endereco {
 
     private String cidade;
 
+    private String logradouro;
+
     private String bairro;
 
     private Long numero;
@@ -33,67 +35,4 @@ public class Endereco {
 
     private CoordenadasGeograficas coordenadasGeograficas;
 
-    public ObjectId getId() {
-        return id;
-    }
-
-    public void setId(ObjectId id) {
-        this.id = id;
-    }
-
-    public String getUF() {
-        return UF;
-    }
-
-    public void setUF(String UF) {
-        this.UF = UF;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public Long getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Long numero) {
-        this.numero = numero;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public CoordenadasGeograficas getCoordenadasGeograficas() {
-        return coordenadasGeograficas;
-    }
-
-    public void setCoordenadasGeograficas(CoordenadasGeograficas coordenadasGeograficas) {
-        this.coordenadasGeograficas = coordenadasGeograficas;
-    }
-
-    public TipoEnderecoEnum getTipoEndereco() {
-        return tipoEndereco;
-    }
-
-    public void setTipoEndereco(TipoEnderecoEnum tipoEndereco) {
-        this.tipoEndereco = tipoEndereco;
-    }
 }

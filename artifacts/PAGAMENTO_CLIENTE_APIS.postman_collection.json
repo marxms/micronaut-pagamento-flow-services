@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "f6621bbf-4019-4242-b7ff-e60941f1aace",
+		"name": "PAGAMENTO_CLIENTE_APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "INSERIR CLIENTE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCompleto\": \"Fulano\",\r\n    \"nacionalidade\": \"Brasileiro\",\r\n    \"numeroDocumento\": \"47436326090\",\r\n    \"enderecos\": [\r\n        {\r\n            \"UF\": \"PE\",\r\n            \"cidade\": \"Olinda\",\r\n            \"bairro\": \"Bairro Novo\",\r\n            \"logradouro\": \"Rua xyz\",\r\n            \"numero\": 269,\r\n            \"complemento\": \"Casa A\",\r\n            \"tipoEndereco\": \"R\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_CLIENTE}}/v1/clientes",
+					"host": [
+						"{{BASE_URL_CLIENTE}}"
+					],
+					"path": [
+						"v1",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERIR CONTA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroConta\": \"12369\",\r\n    \"digito\": \"9\",\r\n    \"numeroDocumentoTitular\": \"07605384416\",\r\n    \"saldo\": 200.00,\r\n    \"saldoEspecial\": 0.00,\r\n    \"statusAtivo\": \"S\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_CONTA}}/v1/conta",
+					"host": [
+						"{{BASE_URL_CONTA}}"
+					],
+					"path": [
+						"v1",
+						"conta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATECONTA",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"conta\" : {\r\n        \"saldo\": 100.5,\r\n        \"saldoEspecial\": 10.5\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_CONTA}}/v1/conta/12369",
+					"host": [
+						"{{BASE_URL_CONTA}}"
+					],
+					"path": [
+						"v1",
+						"conta",
+						"12369"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OBTER CLIENTE POR DOCUMENTO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/clientes/documento/07605384416",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"clientes",
+						"documento",
+						"07605384416"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OBTER CONTA POR NUMERO CONTA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/v1/conta/12369",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"conta",
+						"12369"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REALIZAR PAGAMENTO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroConta\": \"12369\",\r\n    \"valorPagamento\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_ORCH_PAGAMENTO}}/v1/pagamento",
+					"host": [
+						"{{BASE_URL_ORCH_PAGAMENTO}}"
+					],
+					"path": [
+						"v1",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REALIZAR PAGAMENTO V2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"numeroConta\": \"12369\",\r\n    \"valorPagamento\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_ORCH_PAGAMENTO}}/services/v2/pagamento",
+					"host": [
+						"{{BASE_URL_ORCH_PAGAMENTO}}"
+					],
+					"path": [
+						"services",
+						"v2",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
