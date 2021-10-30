@@ -33,9 +33,4 @@ public class PagamentoService {
                 SolicitacaoPagamentoResponseRepresentation.class);
     }
 
-    public Object orderFailed() {
-        log.error("AQUI MARQUINHO");
-        return "Order ERROR";
-    }
-
 }
